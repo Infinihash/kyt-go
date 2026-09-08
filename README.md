@@ -1,57 +1,17 @@
 # kyt-go
 
-Official Go SDK for the [Infinihash KYT API](https://kyt.infinihash.com/docs).
+Go SDK for the [Infinihash KYT API](https://kyt.infinihash.com/docs).
 
-> **Status: Alpha** — API is stable; SDK wrapper is actively being built. Full docs coming soon.
+> **Status: not built yet.** This repository is a placeholder. There is no Go module to install today.
 
-## Installation
+Use one of the shipped clients instead:
 
-```bash
-go get github.com/infinihash/kyt-go
-```
+- Python: `pip install infinihash-kyt` — https://github.com/Infinihash/infinihash-kyt
+- TypeScript / Node: `npm install @infinihash/kyt` — https://github.com/Infinihash/kyt
+- MCP server (Claude, Cursor, any MCP client): `pip install infinihash-kyt-mcp` — https://github.com/Infinihash/infinihash-kyt-mcp
+- Plain HTTP: the API is documented at https://kyt.infinihash.com/docs and works from any language.
 
-## Quick Start
-
-```go
-package main
-
-import (
-    "fmt"
-    "github.com/infinihash/kyt-go/kyt"
-)
-
-func main() {
-    client := kyt.New("your-api-key")
-
-    result, err := client.Screen(kyt.ScreenRequest{
-        Type:  "wallet",
-        Value: "0x722122dF12D4e14e13Ac3b6895a86e84145b6967",
-        Chain: "ethereum",
-    })
-    if err != nil {
-        panic(err)
-    }
-
-    fmt.Println(result.RiskLevel)  // critical
-    fmt.Println(result.Action)     // block
-}
-```
-
-## Features
-
-- Wallet and transaction screening
-- SAR narrative generation
-- Case management
-- Webhook subscription helpers
-- Context-aware async calls
-
-## Documentation
-
-Full API reference at [kyt.infinihash.com/docs](https://kyt.infinihash.com/docs).
-
-## Support
-
-Questions? [support@infinihash.com](mailto:support@infinihash.com)
+If you want a Go client, open an issue and say so; that is how we prioritise it.
 
 ## License
 
